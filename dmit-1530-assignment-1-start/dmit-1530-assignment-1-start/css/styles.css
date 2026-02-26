@@ -1,5 +1,414 @@
 :root {
+    --dark-amethyst: #472360;
+    --thistle: #ddc4dd;
+    --text: #4a4a4a;
+    --muted: #6b6b6b;
+    --bg: #ffffff;
+    --light: #f8f6f8;
+    --container: 1100px;
+}
+
+body {
+    color: var(--text);
+    background: var(--bg);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.site-header {
+    background: #fff;
+    border-bottom: 1px solid #eef0f4;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 0;
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: var(--dark-amethyst);
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    padding: 0;
+    margin: 0;
+}
+
+.main-nav a {
+    color: var(--dark-amethyst);
+    text-decoration: none;
+    font-size: .95rem;
+}
+
+.main-nav a.active,
+.main-nav a:hover {
+    color: var(--dark-amethyst);
+}
+
+.grid {
+    display: grid;
+    gap: 2rem;
+}
+
+.two-col {
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 900px) {
+    .two-col {
+        grid-template-columns: 1.1fr .9fr;
+        align-items: center;
+    }
+}
+
+.hero {
+    padding: 3rem 0 2rem;
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 4vw + 1rem, 3.2rem);
+    line-height: 1.1;
+    color: var(--dark-amethyst);
+    margin: 0 0 1.5rem;
+}
+
+.hero-image img {
+    width: 100%;
+    border-radius: 4px;
+}
+
+.stats {
+    display: flex;
+    gap: 2.5rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.stat {
+    border-left: 3px solid var(--thistle);
+    padding-left: 1rem;
+}
+
+.stat .num {
+    display: block;
+    font-weight: 800;
+    color: var(--dark-amethyst);
+    font-size: 1.25rem;
+}
+
+.stat .label {
+    color: var(--muted);
+    font-size: .8rem;
+}
+
+.trust {
+    background: var(--dark-amethyst);
+    color: #fff;
+    padding: 3rem 0;
+    margin-top: 2rem;
+}
+
+.trust-image img {
+    width: 100%;
+    border-radius: 4px;
+}
+
+.trust h2 {
+    margin: 0 0 1rem;
+    font-size: 1.6rem;
+    color: #fff;
+}
+
+.trust p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.checks {
+    margin: 1rem 0 1.5rem;
+    padding-left: 1.2rem;
+}
+
+.checks li {
+    margin: .3rem 0;
+    list-style: none;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.checks li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--thistle);
+    font-weight: bold;
+}
+
+.btn.light {
+    background: var(--thistle);
+    color: var(--dark-amethyst);
+    padding: .6rem 1rem;
+    border-radius: 6px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 600;
+}
 
 
+.choose {
+    padding: 3rem 0;
+}
 
+.choose-image img {
+    width: 100%;
+    border-radius: 4px;
+}
+
+.choose h3 {
+    font-size: 1.6rem;
+    margin: 0 0 1rem;
+    color: var(--dark-amethyst);
+}
+
+.perks {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem 2rem;
+    margin-top: 1.25rem;
+    color: var(--text);
+}
+
+.perk span {
+    color: var(--muted);
+    font-size: .85rem;
+}
+
+.doctors {
+    background: var(--dark-amethyst);
+    color: #fff;
+    padding: 3rem 0;
+}
+
+.doctors h2 {
+    color: #fff;
+}
+
+.center {
+    text-align: center;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.card {
+    background: #fff;
+    color: var(--text);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: .8rem 1rem;
+}
+
+.card-body h4 {
+    margin: 0 0 .25rem;
+    color: var(--dark-amethyst);
+}
+
+@media (min-width: 800px) {
+    .cards {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.right {
+    text-align: right;
+}
+
+.view-all a {
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+}
+
+.services .view-all a {
+    color: var(--dark-amethyst);
+    border-color: var(--dark-amethyst);
+}
+
+
+.services {
+    padding: 3rem 0;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 1.25rem;
+}
+
+.service {
+    background: var(--light);
+    border: 1px solid #e8e4e8;
+    border-radius: 4px;
+    padding: 1rem;
+}
+
+@media (min-width: 900px) {
+    .service-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+.site-footer {
+    background: var(--dark-amethyst);
+    color: #fff;
+    padding: 2rem 0;
+    margin-top: 2rem;
+}
+
+.footer-brand {
+    font-weight: 800;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+.footer-cols {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.footer-col h5 {
+    color: rgba(255, 255, 255, 0.95);
+    margin: 0 0 .5rem;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-col a {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+}
+
+@media (min-width: 800px) {
+    .footer-cols {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+h1, h2, h3, h4, h5 {
+    font-weight: 800;
+    color: var(--dark-amethyst);
+}
+
+.home .hero {
+    padding-top: 4rem;
+}
+
+.home .trust .btn.light {
+    margin-top: .5rem;
+}
+
+.site-footer .footer-cols {
+    border-top: 2px solid rgba(255,255,255,.15);
+    padding-top: .75rem;
+}
+
+.about-hero {
+    padding: 2rem 0;
+}
+
+.about-grid {
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 900px) {
+    .about-grid {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+}
+
+.offer {
+    padding: 2rem 0;
+}
+
+.offer-intro {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+    margin-top: .5rem;
+}
+
+@media (min-width: 900px) {
+    .offer-intro {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.offer-cards {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+    margin-top: 1rem;
+}
+
+@media (min-width: 900px) {
+    .offer-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.offer-card {
+    background: var(--light);
+    border: 1px solid #e8e4e8;
+    border-radius: 4px;
+    padding: 1rem;
+}
+
+.strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    padding-bottom: 2rem;
+}
+
+.strip img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
 }
